@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ContinueApp</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="logo_description">Continue logo</string>
+    <string name="info_signup">New User? Sign up here</string>
 </resources>
