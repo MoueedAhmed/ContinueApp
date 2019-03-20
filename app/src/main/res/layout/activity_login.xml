@@ -54,70 +54,71 @@
             app:layout_constraintTop_toTopOf="@+id/guideline"
             app:srcCompat="@drawable/app_logo" />
 
-        <EditText
-            android:id="@+id/numberEditTextLogin"
-            android:layout_width="0dp"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:autofillHints="@string/contact_number"
-            android:ems="10"
             android:hint="@string/contact_number"
             android:inputType="phone"
-            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/logoImageViewLogin" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logoImageViewLogin">
 
-        <EditText
-            android:id="@+id/passwordEditTextLogin"
-            android:layout_width="0dp"
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/numberEditTextLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout6"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:autofillHints="@string/password"
-            android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
-            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/numberEditTextLogin" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
-        <Button
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/passwordEditTextLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.button.MaterialButton
             android:id="@+id/loginButtonLogin"
-            android:layout_width="0dp"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:onClick="loginButtonLogin"
             android:text="@string/login"
-            app:layout_constraintEnd_toStartOf="@+id/guideline3"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLogin" />
-
-        <TextView
-            android:id="@+id/infoTextViewLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:text="@string/info_signup"
-            app:layout_constraintEnd_toStartOf="@+id/guideline3"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/loginButtonLogin" />
+            android:onClick="loginButtonLogin"
+            android:textAllCaps="true"
+            android:textAppearance="@style/Theme.MaterialComponents"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
 
         <ImageView
             android:id="@+id/continueLogoimageViewLogin"
@@ -134,4 +135,5 @@
             app:srcCompat="@drawable/continue_logo" />
 
     </android.support.constraint.ConstraintLayout>
+
 </ScrollView>
