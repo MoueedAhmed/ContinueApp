@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Login">
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".Login">
@@ -34,20 +32,27 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.95" />
 
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.86" />
+
         <ImageView
             android:id="@+id/logoImageViewLogin"
-            android:layout_width="333dp"
-            android:layout_height="140dp"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:contentDescription="@string/logo_description"
+            android:contentDescription="@string/app_logo_description"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="@+id/guideline"
-            app:srcCompat="@drawable/continue_logo" />
+            app:srcCompat="@drawable/app_logo" />
 
         <EditText
             android:id="@+id/numberEditTextLogin"
@@ -112,6 +117,19 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/loginButtonLogin" />
+
+        <ImageView
+            android:id="@+id/continueLogoimageViewLogin"
+            android:layout_width="138dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline4"
+            app:srcCompat="@drawable/continue_logo" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
