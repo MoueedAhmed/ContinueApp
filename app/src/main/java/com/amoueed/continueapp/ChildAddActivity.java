@@ -3,6 +3,7 @@ package com.amoueed.continueapp;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.support.design.button.MaterialButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.widget.DatePicker;
 
 public class ChildAddActivity extends AppCompatActivity {
     TextInputEditText childDOBEditText;
+    MaterialButton cancelButtonChildAdd;
     static final int DOB_DIALOG_ID = 999;
     private int year;
     private int month;
@@ -26,6 +28,13 @@ public class ChildAddActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showDialog(DOB_DIALOG_ID);
+            }
+        });
+        cancelButtonChildAdd  = findViewById(R.id.cancelButtonChildAdd);
+        cancelButtonChildAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

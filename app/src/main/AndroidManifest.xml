@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChildAddActivity"></activity>
+        <activity android:name=".ChildAddActivity" android:windowSoftInputMode="stateHidden" ></activity>
         <activity android:name=".ChildReadActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity" android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

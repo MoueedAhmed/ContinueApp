@@ -51,6 +51,7 @@
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/childDOBChildAdd"
                 android:layout_width="match_parent"
+                android:drawableRight="@android:drawable/ic_menu_my_calendar"
                 android:layout_height="wrap_content" />
         </android.support.design.widget.TextInputLayout>
 
@@ -146,7 +147,7 @@
         <android.support.design.button.MaterialButton
             android:id="@+id/addChildButtonChildAdd"
             style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
@@ -158,8 +159,24 @@
             android:textAppearance="@style/Theme.MaterialComponents"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cancelButtonChildAdd"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/cancelButtonChildAdd"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:textAppearance="@style/Theme.MaterialComponents"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
 
     </android.support.constraint.ConstraintLayout>

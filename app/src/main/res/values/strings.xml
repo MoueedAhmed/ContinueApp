@@ -10,6 +10,7 @@
     <string name="continue_logo_description">Continue Logo</string>
     <!-- LoginActivity Layout -->
 
+    <!-- ChildAddActivity Layout -->
     <string name="child_name_hint_text">Child Name</string>
     <string name="child_dob_hint_text">Birth Date</string>
     <string-array name="gender">
@@ -21,4 +22,7 @@
     <string name="phone_hint_text">Phone</string>
     <string name="email_hint_text">Email</string>
     <string name="add_child">Add</string>
+    <string name="cancel">Cancel</string>
+    <!-- ChildAddActivity Layout -->
+
 </resources>
