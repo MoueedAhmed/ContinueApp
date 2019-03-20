@@ -1,19 +1,18 @@
 package com.amoueed.continueapp;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Login extends AppCompatActivity {
+public class ChildReadActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_child_read);
     }
 
-    public void loginButtonLogin(View view) {
-        startActivity(new Intent(Login.this, ChildReadActivity.class));
+    public void addChildfloatingActionButtonChildRead(View view) {
+
     }
 }

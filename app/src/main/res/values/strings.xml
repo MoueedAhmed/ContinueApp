@@ -7,6 +7,7 @@
     <string name="login">Log In</string>
     <string name="app_logo_description">App logo. Infant Immunization Planner</string>
     <string name="info_signup">New User? Sign up here</string>
+    <string name="continue_logo_description">Continue Logo</string>
     <!-- LoginActivity Layout -->
 
 </resources>
