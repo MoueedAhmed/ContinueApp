@@ -1,5 +1,6 @@
 package com.amoueed.continueapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,6 @@ public class ChildReadActivity extends AppCompatActivity {
     }
 
     public void addChildfloatingActionButtonChildRead(View view) {
-
+        startActivity(new Intent(ChildReadActivity.this, ChildAddActivity.class));
     }
 }
