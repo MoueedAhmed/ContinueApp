@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".RegistrationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,19 +44,28 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.86" />
 
-            <ImageView
-                android:id="@+id/logoImageViewLogin"
-                android:layout_width="0dp"
-                android:layout_height="200dp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginBottom="60dp"
+                android:text="@string/registration"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/logoImageViewRegistration"
+                android:layout_width="150dp"
+                android:layout_height="140dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:contentDescription="@string/app_logo_description"
-                app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toTopOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/app_logo" />
 
             <android.support.design.widget.TextInputLayout
@@ -73,10 +82,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/logoImageViewLogin">
+                app:layout_constraintTop_toBottomOf="@+id/logoImageViewRegistration">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/numberEditTextLogin"
+                    android:id="@+id/numberEditTextRegistration"
                     android:layout_width="match_parent"
                     android:inputType="phone"
                     android:layout_height="wrap_content" />
@@ -100,33 +109,49 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/passwordEditTextLogin"
+                    android:id="@+id/passwordEditRegistration"
                     android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.button.MaterialButton
-                android:id="@+id/loginButtonLogin"
+                android:id="@+id/signUpButtonRegistration"
                 style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:text="@string/login"
+                android:text="@string/signup"
+                android:textAllCaps="true"
+                android:textAppearance="@style/Theme.MaterialComponents"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/cancelButtonRegistration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/cancelButtonRegistration"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/cancel"
                 android:textAllCaps="true"
                 android:textAppearance="@style/Theme.MaterialComponents"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
 
             <TextView
-                android:id="@+id/registrationTextViewLogin"
+                android:id="@+id/registrationTextViewRegistration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -135,13 +160,13 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="@string/not_registered"
                 android:gravity="center"
+                android:text="@string/registered"
                 android:textAppearance="?android:textAppearanceMedium"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loginButtonLogin" />
+                app:layout_constraintTop_toBottomOf="@+id/signUpButtonRegistration" />
 
         </android.support.constraint.ConstraintLayout>
 
@@ -153,7 +178,6 @@
             android:contentDescription="@string/continue_logo_description"
             app:srcCompat="@drawable/continue_logo" />
     </LinearLayout>
-
 
 
 </ScrollView>
