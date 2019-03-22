@@ -1,6 +1,7 @@
 package com.amoueed.continueapp.Model;
 
 public class Child {
+    String id;
     String childName;
     String dateOfBirth;
     String gender;
@@ -12,13 +13,22 @@ public class Child {
 
     }
 
-    public Child(String childName, String dateOfBirth, String gender, String guardianName, String phone, String email) {
+    public Child(String id, String childName, String dateOfBirth, String gender, String guardianName, String phone, String email) {
+        this.id = id;
         this.childName = childName;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.guardianName = guardianName;
         this.phone = phone;
         this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getChildName() {
