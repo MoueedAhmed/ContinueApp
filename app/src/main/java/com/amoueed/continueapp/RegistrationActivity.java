@@ -68,6 +68,8 @@ public class RegistrationActivity extends AppCompatActivity {
                 progressDialog.setMessage("Processing...");
                 progressDialog.show();
 
+                mEmail = mEmail + "@amoueed.com";
+
                 firebaseAuth.createUserWithEmailAndPassword(mEmail,mPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
