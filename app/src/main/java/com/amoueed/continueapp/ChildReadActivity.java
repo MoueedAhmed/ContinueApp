@@ -8,13 +8,29 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.amoueed.continueapp.Model.Child;
+import com.firebase.client.Firebase;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ChildReadActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_read);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        String uId = user.getUid();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Child").child(uId);
+        databaseReference.keepSynced(true);
 
         recyclerView = findViewById(R.id.recyclerViewChildRead);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -31,6 +47,16 @@ public class ChildReadActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        FirebaseRecyclerAdapter<Child, ChildViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Child, ChildViewHolder>(
+                Child.class, R.layout.card_child_add, ChildViewHolder.class, databaseReference) {
+            @Override
+            protected void populateViewHolder(ChildViewHolder viewHolder, Child model, int position) {
+                viewHolder.setChildName(model.getChildName());
+                viewHolder.setChildDOB(model.getDateOfBirth());
+            }
+        };
+        recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
 
     public static class ChildViewHolder extends RecyclerView.ViewHolder{

@@ -26,7 +26,13 @@
     <string name="cancel">Cancel</string>
     <!-- ChildAddActivity Layout -->
 
+    <!-- RegistrationActivity Layout -->
     <string name="registration">Registration Form</string>
     <string name="signup">SIGN UP</string>
     <string name="registered">Already Registered? Sign in here!</string>
+    <!-- RegistrationActivity Layout -->
+
+    <!-- ChildReadActivity Layout -->
+    <string name="empty">No Data</string>
+    <!-- ChildReadActivity Layout -->
 </resources>

@@ -92,7 +92,7 @@ public class ChildAddActivity extends AppCompatActivity {
                     return;
                 }
 
-                Child child = new Child(id, gender, dateOfBirth, gender, guardianName, phone, email);
+                Child child = new Child(id, childName, dateOfBirth, gender, guardianName, phone, email);
                 databaseReference.child(id).setValue(child);
                 Toast.makeText(getApplicationContext(),"Data Inserted",Toast.LENGTH_SHORT).show();
                 finish();
