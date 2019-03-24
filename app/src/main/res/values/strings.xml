@@ -37,7 +37,7 @@
     <!-- ChildReadActivity Layout -->
 
     <!-- menu_child_read -->
-    <string name="logout_child_read">Log Out</string>
+    <string name="logout_child_read">Logged Out</string>
     <!-- menu_child_read -->
 
 </resources>

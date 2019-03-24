@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amoueed.continueapp.Model.Child;
 import com.firebase.client.Firebase;
@@ -77,5 +80,22 @@ public class ChildReadActivity extends AppCompatActivity {
             date.setText(childName);
         }
     }
-    
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_child_read, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
+        switch (item.getItemId()) {
+            case R.id.item_logout:
+                firebaseAuth.signOut();
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
