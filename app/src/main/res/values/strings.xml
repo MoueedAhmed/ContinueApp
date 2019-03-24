@@ -35,4 +35,9 @@
     <!-- ChildReadActivity Layout -->
     <string name="empty">No Data</string>
     <!-- ChildReadActivity Layout -->
+
+    <!-- menu_child_read -->
+    <string name="logout_child_read">Log Out</string>
+    <!-- menu_child_read -->
+
 </resources>

@@ -77,4 +77,5 @@ public class ChildReadActivity extends AppCompatActivity {
             date.setText(childName);
         }
     }
+    
 }
