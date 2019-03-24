@@ -40,4 +40,8 @@
     <string name="logout_child_read">Logged Out</string>
     <!-- menu_child_read -->
 
+    <!-- ChildUpdateDeleteActivity Layout -->
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <!-- ChildUpdateDeleteActivity Layout -->
 </resources>

@@ -57,6 +57,12 @@ public class ChildReadActivity extends AppCompatActivity {
             protected void populateViewHolder(ChildViewHolder viewHolder, Child model, int position) {
                 viewHolder.setChildName(model.getChildName());
                 viewHolder.setChildDOB(model.getDateOfBirth());
+                viewHolder.myView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(ChildReadActivity.this, ChildUpdateDeleteActivity.class));
+                    }
+                });
             }
         };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
