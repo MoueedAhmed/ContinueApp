@@ -1,6 +1,9 @@
 package com.amoueed.continueapp.Model;
 
-public class Child {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Child implements Parcelable {
     String id;
     String childName;
     String dateOfBirth;
@@ -9,7 +12,7 @@ public class Child {
     String phone;
     String email;
 
-    Child(){
+    public Child(){
 
     }
 
@@ -78,4 +81,47 @@ public class Child {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Child(Parcel p)
+    {
+        id = p.readString();
+        childName = p.readString();
+        dateOfBirth = p.readString();
+        gender = p.readString();
+        guardianName = p.readString();
+        phone = p.readString();
+        email = p.readString();
+    }
+
+    @Override
+    public int describeContents()
+    {
+        return hashCode();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags)
+    {
+        dest.writeString(id);
+        dest.writeString(childName);
+        dest.writeString(dateOfBirth);
+        dest.writeString(gender);
+        dest.writeString(guardianName);
+        dest.writeString(phone);
+        dest.writeString(email);
+    }
+
+    // We need to add a Creator
+    public static final Parcelable.Creator<Child> CREATOR = new Parcelable.Creator<Child>() {
+
+        @Override
+        public Child createFromParcel(Parcel parcel) {
+            return new Child(parcel);
+        }
+
+        @Override
+        public Child[] newArray(int size) {
+            return new Child[size];
+        }
+    };
 }
