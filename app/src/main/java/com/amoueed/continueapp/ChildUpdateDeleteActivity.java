@@ -117,6 +117,8 @@ public class ChildUpdateDeleteActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                databaseReference.child(mId).removeValue();
+                Toast.makeText(getApplicationContext(),"Deleted",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
