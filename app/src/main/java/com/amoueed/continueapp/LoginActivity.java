@@ -40,6 +40,12 @@ public class LoginActivity extends AppCompatActivity {
         numberEditTextLogin = findViewById(R.id.numberEditTextLogin);
         passwordEditTextLogin = findViewById(R.id.passwordEditTextLogin);
         firebaseAuth = FirebaseAuth.getInstance();
+
+        //Check if user is already Logged In or not
+        if(firebaseAuth.getCurrentUser()!=null){
+            startActivity(new Intent(getApplicationContext(), ChildReadActivity.class));
+        }
+
         progressDialog = new ProgressDialog(this);
         loginButtonLogin = findViewById(R.id.loginButtonLogin);
         loginButtonLogin.setOnClickListener(new View.OnClickListener() {
