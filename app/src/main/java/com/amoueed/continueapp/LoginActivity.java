@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                         }
                         else {
-                            Toast.makeText(getApplicationContext(),"Problem in Auth",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Mobile Number or password invalid",Toast.LENGTH_LONG).show();
                             progressDialog.dismiss();
                         }
                     }
