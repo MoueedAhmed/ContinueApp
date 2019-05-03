@@ -44,4 +44,49 @@
     <string name="update">Update</string>
     <string name="delete">Delete</string>
     <!-- ChildUpdateDeleteActivity Layout -->
+
+
+    <string-array name="vaccine_names">
+        <item>BCG(Dose-1)</item>
+        <item>OPV(Dose-1)</item>
+        <item>IPV(Dose-1)</item>
+        <item>HEP B(Dose-1)</item>
+        <item>DTP(Dose-1)</item>
+        <item>Hib(Dose-1)</item>
+        <item>PCV(Dose-1)</item>
+        <item>IPV(Dose-2)</item>
+        <item>Hep B(Dose-2)</item>
+        <item>DTP(Dose-2)</item>
+        <item>Hib(Dose-2)</item>
+        <item>PCV(Dose-2)</item>
+        <item>Rota Virus(Dose-1)</item>
+        <item>IPV(Dose-3)</item>
+        <item>Hep B(Dose-3)</item>
+        <item>DTP(Dose-3)</item>
+        <item>Hib(Dose-3)</item>
+        <item>PCV(Dose-3)</item>
+        <item>Rota Virus(Dose-2)</item>
+    </string-array>
+
+    <array name="vaccine_images">
+        <item>@drawable/bcg</item>
+        <item>@drawable/opv</item>
+        <item>@drawable/ipv</item>
+        <item>@drawable/hepb</item>
+        <item>@drawable/dtp</item>
+        <item>@drawable/hib</item>
+        <item>@drawable/pcv</item>
+        <item>@drawable/ipv</item>
+        <item>@drawable/hepb</item>
+        <item>@drawable/dtp</item>
+        <item>@drawable/hib</item>
+        <item>@drawable/pcv</item>
+        <item>@drawable/rota</item>
+        <item>@drawable/ipv</item>
+        <item>@drawable/hepb</item>
+        <item>@drawable/dtp</item>
+        <item>@drawable/hib</item>
+        <item>@drawable/pcv</item>
+        <item>@drawable/rota</item>
+    </array>
 </resources>

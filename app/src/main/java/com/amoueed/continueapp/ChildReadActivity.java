@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,7 +35,6 @@ public class ChildReadActivity extends AppCompatActivity {
         String uId = user.getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Child").child(uId);
         databaseReference.keepSynced(true);
-
         recyclerView = findViewById(R.id.recyclerViewChildRead);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setStackFromEnd(true);
@@ -60,17 +60,7 @@ public class ChildReadActivity extends AppCompatActivity {
                 viewHolder.myView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent myIntent = new Intent(ChildReadActivity.this, ChildUpdateDeleteActivity.class);
-                        Child child = new Child();
-                        child.setId(model.getId());
-                        child.setChildName(model.getChildName());
-                        child.setDateOfBirth(model.getDateOfBirth());
-                        child.setGender(model.getGender());
-                        child.setGuardianName(model.getGuardianName());
-                        child.setPhone(model.getPhone());
-                        child.setEmail(model.getEmail());
-                        myIntent.putExtra("myChild", child);
-                        startActivity(myIntent);
+
                     }
                 });
             }
@@ -91,9 +81,9 @@ public class ChildReadActivity extends AppCompatActivity {
             name.setText(childName);
         }
 
-        public void setChildDOB(String childName){
+        public void setChildDOB(String childDOB){
             TextView date = myView.findViewById(R.id.date);
-            date.setText(childName);
+            date.setText(childDOB);
         }
     }
 

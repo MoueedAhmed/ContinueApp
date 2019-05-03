@@ -3,6 +3,7 @@ package com.amoueed.continueapp;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.res.TypedArray;
 import android.support.design.button.MaterialButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
@@ -15,11 +16,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.amoueed.continueapp.Model.Child;
+import com.amoueed.continueapp.Model.Vaccine;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class ChildAddActivity extends AppCompatActivity {
@@ -27,9 +30,6 @@ public class ChildAddActivity extends AppCompatActivity {
     private TextInputEditText childNameChildAdd;
     private TextInputEditText childDOBEditText;
     private Spinner genderSpinnerChildAdd;
-    private TextInputEditText guardianNameChildAdd;
-    private TextInputEditText phoneChildAdd;
-    private TextInputEditText emailChildAdd;
     private MaterialButton addChildButtonChildAdd;
     private MaterialButton cancelButtonChildAdd;
 
@@ -40,10 +40,15 @@ public class ChildAddActivity extends AppCompatActivity {
 
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
+
+    private ArrayList<Vaccine> mVaccineData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_add);
+
+        mVaccineData = new ArrayList<>();
+        initializeData();
 
         childNameChildAdd = findViewById(R.id.childNameChildAdd);
         childDOBEditText = findViewById(R.id.childDOBChildAdd);
@@ -54,9 +59,6 @@ public class ChildAddActivity extends AppCompatActivity {
             }
         });
         genderSpinnerChildAdd = findViewById(R.id.genderSpinnerChildAdd);
-        guardianNameChildAdd = findViewById(R.id.guardianNameChildAdd);
-        phoneChildAdd = findViewById(R.id.phoneChildAdd);
-        emailChildAdd = findViewById(R.id.emailChildAdd);
         cancelButtonChildAdd  = findViewById(R.id.cancelButtonChildAdd);
         addChildButtonChildAdd = findViewById(R.id.addChildButtonChildAdd);
         addChildButtonChildAdd.setOnClickListener(new View.OnClickListener() {
@@ -67,9 +69,6 @@ public class ChildAddActivity extends AppCompatActivity {
                 String childName = childNameChildAdd.getText().toString().trim();
                 String dateOfBirth = childDOBEditText.getText().toString().trim();
                 String gender = genderSpinnerChildAdd.getSelectedItem().toString().trim();
-                String guardianName = guardianNameChildAdd.getText().toString().trim();
-                String phone = phoneChildAdd.getText().toString().trim();
-                String email = emailChildAdd.getText().toString().trim();
 
                 if(TextUtils.isEmpty(childName)){
                     childNameChildAdd.setError("Required!");
@@ -79,20 +78,8 @@ public class ChildAddActivity extends AppCompatActivity {
                     childDOBEditText.setError("Required!");
                     return;
                 }
-                if(TextUtils.isEmpty(guardianName)){
-                    guardianNameChildAdd.setError("Required!");
-                    return;
-                }
-                if(TextUtils.isEmpty(phone)){
-                    phoneChildAdd.setError("Required!");
-                    return;
-                }
-                if(TextUtils.isEmpty(email)){
-                    emailChildAdd.setError("Required!");
-                    return;
-                }
 
-                Child child = new Child(id, childName, dateOfBirth, gender, guardianName, phone, email);
+                Child child = new Child(id, childName, dateOfBirth, gender, mVaccineData);
                 databaseReference.child(id).setValue(child);
                 Toast.makeText(getApplicationContext(),"Data Inserted",Toast.LENGTH_SHORT).show();
                 finish();
@@ -184,5 +171,21 @@ public class ChildAddActivity extends AppCompatActivity {
                         datePickerListener, year, month,day);
         }
         return null;
+    }
+
+    private void initializeData() {
+        // Get the resources from the XML file.
+        String[] vaccineList = getResources().getStringArray(R.array.vaccine_names);
+        TypedArray vaccinesImageResources = getResources().obtainTypedArray(R.array.vaccine_images);
+
+        // Clear the existing data (to avoid duplication).
+        mVaccineData.clear();
+
+        for(int i=0;i<vaccineList.length;i++){
+            mVaccineData.add(new Vaccine(vaccineList[i], "Due Date: xx:xx:xxxx","Given Date: xx:xx:xxxx",
+                    "Status: Not Specified", "Reminder: Yes", vaccinesImageResources.getResourceId(i,0)));
+        }
+
+        vaccinesImageResources.recycle();
     }
 }
