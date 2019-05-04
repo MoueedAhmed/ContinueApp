@@ -6,19 +6,17 @@ public class Vaccine {
     private String givenDate;
     private String status;
     private String reminderStatus;
-    private int imageResource;
 
     public Vaccine() {
 
     }
 
-    public Vaccine(String name, String dueDate, String givenDate, String status, String reminderStatus, int imageResource) {
+    public Vaccine(String name, String dueDate, String givenDate, String status, String reminderStatus) {
         this.name = name;
         this.dueDate = dueDate;
         this.givenDate = givenDate;
         this.status = status;
         this.reminderStatus = reminderStatus;
-        this.imageResource = imageResource;
     }
 
     public String getName() {
@@ -41,7 +39,4 @@ public class Vaccine {
         return reminderStatus;
     }
 
-    public int getImageResource() {
-        return imageResource;
-    }
 }

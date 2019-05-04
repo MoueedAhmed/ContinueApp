@@ -9,18 +9,17 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/vaccineImage"
+            android:id="@+id/childImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:src="@drawable/child" />
+            android:adjustViewBounds="true"/>
 
         <TextView
             android:id="@+id/name"
             style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/vaccineImage"
+            android:layout_alignBottom="@id/childImage"
             android:padding="8dp"
             android:text="@string/name"
             android:textStyle="bold"
@@ -32,7 +31,7 @@
             style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/vaccineImage"
+            android:layout_below="@id/childImage"
             android:padding="8dp"
             android:text="@string/date"
             android:textColor="?android:textColorSecondary" />

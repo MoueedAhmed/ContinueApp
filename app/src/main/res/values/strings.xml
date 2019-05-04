@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">ContinueApp</string>
-
-    <!-- LoginActivity Layout -->
     <string name="contact_number">Contact Number</string>
     <string name="password">Password</string>
     <string name="login">Log In</string>
@@ -9,46 +7,30 @@
     <string name="info_signup">New User? Sign up here</string>
     <string name="continue_logo_description">Continue Logo</string>
     <string name="not_registered">Not Registered? Sign up here!</string>
-    <!-- LoginActivity Layout -->
-
-    <!-- ChildAddActivity Layout -->
     <string name="child_name_hint_text">Child Name</string>
     <string name="child_dob_hint_text">Birth Date</string>
+
     <string-array name="gender">
         <item>Male</item>
         <item>Female</item>
         <item>Other</item>
     </string-array>
+
     <string name="guardian_name_hint_text">Guardian Name</string>
     <string name="phone_hint_text">Phone</string>
     <string name="email_hint_text">Email</string>
     <string name="add_child">Add</string>
     <string name="cancel">Cancel</string>
-    <!-- ChildAddActivity Layout -->
-
-    <!-- RegistrationActivity Layout -->
     <string name="registration">Registration Form</string>
     <string name="signup">SIGN UP</string>
     <string name="registered">Already Registered? Sign in here!</string>
-    <!-- RegistrationActivity Layout -->
-
-    <!-- ChildReadActivity Layout -->
     <string name="empty">No Data</string>
-    <!-- ChildReadActivity Layout -->
-
-    <!-- menu_child_read -->
     <string name="logout_child_read">Logged Out</string>
-    <!-- menu_child_read -->
-
-    <!-- ChildUpdateDeleteActivity Layout -->
     <string name="update">Update</string>
     <string name="delete">Delete</string>
     <string name="name">Child Name</string>
     <string name="date">4/May/2019</string>
     <string name="gender">Male</string>
-    <!-- ChildUpdateDeleteActivity Layout -->
-
-
     <string-array name="vaccine_names">
         <item>BCG(Dose-1)</item>
         <item>OPV(Dose-1)</item>
@@ -71,25 +53,10 @@
         <item>Rota Virus(Dose-2)</item>
     </string-array>
 
-    <array name="vaccine_images">
-        <item>@drawable/bcg</item>
-        <item>@drawable/opv</item>
-        <item>@drawable/ipv</item>
-        <item>@drawable/hepb</item>
-        <item>@drawable/dtp</item>
-        <item>@drawable/hib</item>
-        <item>@drawable/pcv</item>
-        <item>@drawable/ipv</item>
-        <item>@drawable/hepb</item>
-        <item>@drawable/dtp</item>
-        <item>@drawable/hib</item>
-        <item>@drawable/pcv</item>
-        <item>@drawable/rota</item>
-        <item>@drawable/ipv</item>
-        <item>@drawable/hepb</item>
-        <item>@drawable/dtp</item>
-        <item>@drawable/hib</item>
-        <item>@drawable/pcv</item>
-        <item>@drawable/rota</item>
-    </array>
+    <string name="vaccine_name">Vaccine Name</string>
+    <string name="due_date">Due Date: xx:xx:xxxx</string>
+    <string name="date_given">Given Date: xx:xx:xxxx</string>
+    <string name="vaccine_status">Status: Not Specified</string>
+    <string name="vaccine_reminder_status">Reminder: Yes</string>
+
 </resources>

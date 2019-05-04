@@ -174,16 +174,13 @@ public class ChildAddActivity extends AppCompatActivity {
     private void initializeData() {
         // Get the resources from the XML file.
         String[] vaccineList = getResources().getStringArray(R.array.vaccine_names);
-        TypedArray vaccinesImageResources = getResources().obtainTypedArray(R.array.vaccine_images);
 
         // Clear the existing data (to avoid duplication).
         mVaccineData.clear();
 
         for(int i=0;i<vaccineList.length;i++){
             mVaccineData.add(new Vaccine(vaccineList[i], "Due Date: xx:xx:xxxx","Given Date: xx:xx:xxxx",
-                    "Status: Not Specified", "Reminder: Yes", vaccinesImageResources.getResourceId(i,0)));
+                    "Status: Not Specified", "Reminder: Yes"));
         }
-
-        vaccinesImageResources.recycle();
     }
 }

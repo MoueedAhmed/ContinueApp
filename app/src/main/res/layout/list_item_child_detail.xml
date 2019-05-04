@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:id="@+id/vaccineImage"/>
+        <TextView
+            android:id="@+id/vaccine_name"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_alignBottom="@id/vaccineImage"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            android:text="@string/vaccine_name" />
+
+        <TextView
+            android:id="@+id/due_date"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/due_date"
+            android:layout_below="@id/vaccineImage"
+            android:textColor="?android:textColorSecondary"/>
+
+        <TextView
+            android:id="@+id/given_date"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_below="@id/due_date"
+            android:text="@string/date_given" />
+
+        <TextView
+            android:id="@+id/vaccine_status"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_toRightOf="@id/due_date"
+            android:layout_below="@id/vaccineImage"
+            android:text="@string/vaccine_status" />
+
+        <TextView
+            android:id="@+id/vaccine_reminder_status"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_toRightOf="@id/given_date"
+            android:layout_below="@id/vaccine_status"
+            android:text="@string/vaccine_reminder_status" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
