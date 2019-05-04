@@ -38,18 +38,17 @@ public class ChildReadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_read);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = firebaseAuth.getCurrentUser();
-        String uId = user.getUid();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Child").child(uId);
-        databaseReference.keepSynced(true);
-
         mRecyclerView = findViewById(R.id.recyclerViewChildRead);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mChildData = new ArrayList<>();
         mAdapter = new ChildAdapter(this, mChildData);
         mRecyclerView.setAdapter(mAdapter);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        String uId = user.getUid();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Child").child(uId);
+        databaseReference.keepSynced(true);
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
