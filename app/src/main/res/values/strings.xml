@@ -43,6 +43,9 @@
     <!-- ChildUpdateDeleteActivity Layout -->
     <string name="update">Update</string>
     <string name="delete">Delete</string>
+    <string name="name">Child Name</string>
+    <string name="date">4/May/2019</string>
+    <string name="gender">Male</string>
     <!-- ChildUpdateDeleteActivity Layout -->
 
 

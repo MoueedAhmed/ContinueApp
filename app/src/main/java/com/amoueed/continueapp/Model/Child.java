@@ -1,7 +1,5 @@
 package com.amoueed.continueapp.Model;
 
-import android.content.res.TypedArray;
-import com.amoueed.continueapp.R;
 import java.util.ArrayList;
 
 public class Child {
