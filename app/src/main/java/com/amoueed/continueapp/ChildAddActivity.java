@@ -2,11 +2,9 @@ package com.amoueed.continueapp;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.app.TimePickerDialog;
 import android.content.res.TypedArray;
 import android.support.design.button.MaterialButton;
 import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,8 +13,8 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.amoueed.continueapp.Model.Child;
-import com.amoueed.continueapp.Model.Vaccine;
+import com.amoueed.continueapp.model.Child;
+import com.amoueed.continueapp.model.Vaccine;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;

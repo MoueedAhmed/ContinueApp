@@ -1,4 +1,4 @@
-package com.amoueed.continueapp.Model;
+package com.amoueed.continueapp.model;
 
 import java.util.ArrayList;
 

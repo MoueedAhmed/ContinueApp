@@ -1,4 +1,4 @@
-package com.amoueed.continueapp.Model;
+package com.amoueed.continueapp.model;
 
 public class Vaccine {
     private String name;
