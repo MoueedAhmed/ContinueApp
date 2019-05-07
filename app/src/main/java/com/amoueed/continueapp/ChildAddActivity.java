@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class ChildAddActivity extends AppCompatActivity {
 
@@ -45,8 +46,7 @@ public class ChildAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_add);
 
-        mVaccineData = new ArrayList<>();
-        initializeData();
+        mVaccineData = generateVaccines();
 
         childNameChildAdd = findViewById(R.id.childNameChildAdd);
         childDOBEditText = findViewById(R.id.childDOBChildAdd);
@@ -104,6 +104,7 @@ public class ChildAddActivity extends AppCompatActivity {
         month = c.get(Calendar.MONTH);
         day = c.get(Calendar.DAY_OF_MONTH);
 
+
         // set current date into textview
         childDOBEditText.setText(new StringBuilder()
                 // Month is 0 based, just add 1
@@ -143,8 +144,7 @@ public class ChildAddActivity extends AppCompatActivity {
         return "";
     }
 
-    private DatePickerDialog.OnDateSetListener datePickerListener
-            = new DatePickerDialog.OnDateSetListener() {
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
         // when dialog box is closed, below method will be called.
         public void onDateSet(DatePicker view, int selectedYear,
@@ -171,16 +171,24 @@ public class ChildAddActivity extends AppCompatActivity {
         return null;
     }
 
-    private void initializeData() {
-        // Get the resources from the XML file.
-        String[] vaccineList = getResources().getStringArray(R.array.vaccine_names);
+    private String getDate(int year, int month, int date, int daysToAdd){
+        final Calendar c = Calendar.getInstance();
+        c.set(year,month,date);
+        c.add(Calendar.DATE, daysToAdd);
+        int newYear = c.get(Calendar.YEAR);
+        int newMonth = c.get(Calendar.MONTH);
+        int newDay = c.get(Calendar.DAY_OF_MONTH);
+        return new StringBuilder().append(newDay).append("/")
+                .append(displayTheMonthInCharacters(newMonth )).append("/")
+                .append(newYear).append(" ").toString();
+    }
 
-        // Clear the existing data (to avoid duplication).
-        mVaccineData.clear();
+    private ArrayList<Vaccine> generateVaccines(){
 
-        for(int i=0;i<vaccineList.length;i++){
-            mVaccineData.add(new Vaccine(vaccineList[i], "Due Date: xx:xx:xxxx","Given Date: xx:xx:xxxx",
-                    "Status: Not Specified", "Reminder: Yes"));
-        }
+        ArrayList<Vaccine> vaccines = new ArrayList<>();
+        vaccines.add(new Vaccine("BCG(Dose-1)", getDate(1992,11,7,1),"Given Date: xx:xx:xxxx", "Status: Not Specified", "Reminder: Yes" ));
+        vaccines.add(new Vaccine("OPV(Dose-1)", getDate(1992,11,7,2),"Given Date: xx:xx:xxxx", "Status: Not Specified", "Reminder: Yes" ));
+        vaccines.add(new Vaccine("IPV(Dose-1)", getDate(1992,11,7,3),"Given Date: xx:xx:xxxx", "Status: Not Specified", "Reminder: Yes" ));
+        return vaccines;
     }
 }
